@@ -5,7 +5,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listTodos } from './graphql/queries';
 import { createTodo as createNoteMutation, deleteTodo as deleteNoteMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: '', priority: '', onwer: '' }
+const initialFormState = { name: '', description: ''}
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -40,7 +40,6 @@ function App() {
         {
           notes.map(note => (
             <div key={note.id || note.name}>
-              <h2></h2>
               <p>Priority {note.priority}: {note.name} - {note.description} 
               {} - {note.owner} {note.status} 
               {} <button onClick={() => deleteNote(note)}>Delete</button>
