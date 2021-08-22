@@ -3,7 +3,10 @@ type Todo @model {
   name: String!
   description: String
   priority: Int
+<<<<<<< HEAD
   owner: String
   requester: String
   status: Boolean
+=======
+>>>>>>> parent of b988482... adding boolean to schema
 }
