@@ -4,5 +4,6 @@ type Todo @model {
   description: String
   priority: Int
   owner: String
-  Status: Boolean
+  requester: String
+  status: Boolean
 }

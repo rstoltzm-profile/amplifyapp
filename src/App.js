@@ -5,7 +5,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listTodos } from './graphql/queries';
 import { createTodo as createNoteMutation, deleteTodo as deleteNoteMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: '' }
+const initialFormState = { name: '', description: '', priority: '', onwer: '' }
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -41,8 +41,9 @@ function App() {
           notes.map(note => (
             <div key={note.id || note.name}>
               <h2></h2>
-              <p>Priority {note.priority}: {note.name} {note.description}  
-              <button onClick={() => deleteNote(note)}>Delete</button>
+              <p>Priority {note.priority}: {note.name} - {note.description} 
+              {} - {note.owner} {note.status} 
+              {} <button onClick={() => deleteNote(note)}>Delete</button>
               </p>
             </div>
           ))
@@ -50,18 +51,23 @@ function App() {
       </div>
       <input
         onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
-        placeholder="Ticket Priority"
+        placeholder="Priority"
         value={formData.priority}
       />
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Ticket Title"
+        placeholder="Ticket#"
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Ticket description"
+        placeholder="Description"
         value={formData.description}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'owner': e.target.value})}
+        placeholder="Owner"
+        value={formData.owner}
       />
       <button onClick={createNote}>Create Note</button>
       <AmplifySignOut />

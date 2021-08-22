@@ -8,6 +8,9 @@ export const getTodo = /* GraphQL */ `
       name
       description
       priority
+      owner
+      requester
+      status
       createdAt
       updatedAt
     }
@@ -25,6 +28,9 @@ export const listTodos = /* GraphQL */ `
         name
         description
         priority
+        owner
+        requester
+        status
         createdAt
         updatedAt
       }
