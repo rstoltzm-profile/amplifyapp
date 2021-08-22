@@ -5,7 +5,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listTodos } from './graphql/queries';
 import { createTodo as createNoteMutation, deleteTodo as deleteNoteMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: ''}
+const initialFormState = { name: '', description: '' }
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -34,6 +34,7 @@ function App() {
   }
 
   return (
+    <div className="App">
       <h1>My Notes App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}

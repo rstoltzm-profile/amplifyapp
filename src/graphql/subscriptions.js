@@ -8,9 +8,6 @@ export const onCreateTodo = /* GraphQL */ `
       name
       description
       priority
-      owner
-      requester
-      status
       createdAt
       updatedAt
     }
@@ -23,9 +20,6 @@ export const onUpdateTodo = /* GraphQL */ `
       name
       description
       priority
-      owner
-      requester
-      status
       createdAt
       updatedAt
     }
@@ -38,9 +32,6 @@ export const onDeleteTodo = /* GraphQL */ `
       name
       description
       priority
-      owner
-      requester
-      status
       createdAt
       updatedAt
     }
