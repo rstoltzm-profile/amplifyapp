@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+table { 
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 75%;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  margin-left: 10%;
+}
+
+tr, td {
+  border: 3px solid black;
+  text-align: center;
+  width: 500px;
+}
+
+th{
+  border: 3px solid black;
+  text-align: center;
+  width: 500px;
+  font-weight: bold;
+}
+

@@ -35,7 +35,29 @@ function App() {
 
   return (
     <div className="App">
+      <>
       <h1>My Notes App</h1>
+        <table id="tickets">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>description</th>
+              <th>priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {notes.map(note => (
+                  <tr>
+                    <td>{note.name}</td>
+                    <td>{note.description} </td>
+                    <td>{note.priority}</td>
+                    <td><button onClick={() => deleteNote(note)}>Delete note</button></td>
+                  </tr>
+              ))
+            }
+          </tbody>
+        </table>
+        <br></br>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Note name"
@@ -53,17 +75,10 @@ function App() {
       />
       <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
-        {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description} {note.priority}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-            </div>
-          ))
-        }
+
       </div>
       <AmplifySignOut />
+      </>
     </div>
   );
 }
