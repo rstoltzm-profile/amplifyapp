@@ -1,0 +1,9 @@
+# to update the schema
+go to amplify -> backend -> api / amplifyapp -> schema.graphql
+update graphql with new schema
+run the following in command prompt in root directory
+git add .  
+git commit -m "comment"
+amplify push --y
+npm start # to test the app
+git push origin main  # to push the changes to the aws server

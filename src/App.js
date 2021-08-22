@@ -46,13 +46,18 @@ function App() {
         placeholder="Note description"
         value={formData.description}
       />
+      <input
+        onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
+        placeholder="Priority"
+        value={formData.priority}
+      />
       <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
             <div key={note.id || note.name}>
               <h2>{note.name}</h2>
-              <p>{note.description}</p>
+              <p>{note.description} {note.priority}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
             </div>
           ))
