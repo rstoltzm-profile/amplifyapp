@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
@@ -86,6 +88,17 @@ function App() {
         ))
       }
       </div>
+=======
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+
+function App() {
+  return (
+    <div className="App">
+      <header>
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>We now have Auth!</h1>
+      </header>
+>>>>>>> parent of 58683d0... adding the api application usage
       <AmplifySignOut />
     </div>
   );

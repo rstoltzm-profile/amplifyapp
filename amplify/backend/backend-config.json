@@ -22,6 +22,7 @@
         ]
       }
     }
+<<<<<<< HEAD
   },
   "api": {
     "amplifyapp": {
@@ -46,5 +47,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
+=======
+>>>>>>> parent of 58683d0... adding the api application usage
   }
 }
