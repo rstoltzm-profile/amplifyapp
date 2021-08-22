@@ -35,47 +35,14 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-      <h1>Ticket Management App</h1>
-      <div style={{marginBottom: 30}}>
-        {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <p>Priority {note.priority}: {note.name} - {note.description} 
-              {} - {note.owner} {note.status} 
-              {} <button onClick={() => deleteNote(note)}>Delete</button>
-              </p>
-            </div>
-          ))
-        }
-      </div>
-      <input
-        onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
-        placeholder="Priority"
-        value={formData.priority}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Ticket#"
-=======
       <h1>My Notes App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Note name"
->>>>>>> parent of b988482... adding boolean to schema
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-<<<<<<< HEAD
-        placeholder="Description"
-        value={formData.description}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'owner': e.target.value})}
-        placeholder="Owner"
-        value={formData.owner}
-=======
         placeholder="Note description"
         value={formData.description}
       />
@@ -83,7 +50,6 @@ function App() {
         onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
         placeholder="Priority"
         value={formData.priority}
->>>>>>> parent of b988482... adding boolean to schema
       />
       <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
