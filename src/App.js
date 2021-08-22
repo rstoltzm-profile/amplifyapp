@@ -35,34 +35,35 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
-        placeholder="Priority"
-        value={formData.priority}
-      />
-      <button onClick={createNote}>Create Note</button>
+      <h1>Ticket Management App</h1>
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
             <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description} {note.priority}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+              <h2></h2>
+              <p>Priority {note.priority}: {note.name} {note.description}  
+              <button onClick={() => deleteNote(note)}>Delete</button>
+              </p>
             </div>
           ))
         }
       </div>
+      <input
+        onChange={e => setFormData({ ...formData, 'priority': e.target.value})}
+        placeholder="Ticket Priority"
+        value={formData.priority}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+        placeholder="Ticket Title"
+        value={formData.name}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+        placeholder="Ticket description"
+        value={formData.description}
+      />
+      <button onClick={createNote}>Create Note</button>
       <AmplifySignOut />
     </div>
   );

@@ -3,4 +3,6 @@ type Todo @model {
   name: String!
   description: String
   priority: Int
+  owner: String
+  Status: Boolean
 }
